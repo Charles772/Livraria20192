@@ -6,35 +6,27 @@
 package modelo;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Temporal;
 
 /**
  *
  * @author Aluno
  */
 @Entity
-public class Editora implements Serializable {
-
-    @OneToMany(mappedBy = "editora")
-    private List<Livro> livros;
+public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
-    private String endereco;
-    private String telefone;
+    private String email;
+    private String senha;
     private String foto;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date fundacao;
+    private String tipo;
 
     public Long getId() {
         return id;
@@ -52,20 +44,20 @@ public class Editora implements Serializable {
         this.nome = nome;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getFoto() {
@@ -76,14 +68,15 @@ public class Editora implements Serializable {
         this.foto = foto;
     }
 
-    public Date getFundacao() {
-        return fundacao;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setFundacao(Date fundacao) {
-        this.fundacao = fundacao;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
+
     
-    
+   
     
 }
